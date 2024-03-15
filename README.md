@@ -1,16 +1,44 @@
-### Hi there 👋
+```cpp
+#include <iostream>
+#include <map>
+#include <string>
 
-<!--
-**ZyrxusMe/ZyrxusMe** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+std::map<std::string, std::string> wizly(const std::string& lang) {
+    std::map<std::string, std::string> response;
 
-Here are some ideas to get you started:
+    if (lang.empty()) {
+        response["msg"] = "Please specify a language.";
+    } else if (lang == "en") {
+        response = {{"code", "200"}, {"title", "Weasley"}, {"desc", "He's a maniac who messes with the code like crazy"}};
+    } else if (lang == "tr") {
+        response = {{"code", "200"}, {"title", "Weasley"}, {"desc", "Kodlarla deli gibi uğraşan bir manyak"}};
+    } else {
+        response["msg"] = "Please specify a correct language";
+    }
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    return response;
+}
+
+int main() {
+    std::string lang;
+    std::cout << "Enter language (en or tr): ";
+    std::cin >> lang;
+
+    std::map<std::string, std::string> result = wizly(lang);
+
+    for (const auto& pair : result) {
+        std::cout << pair.first << ": " << pair.second << std::endl;
+    }
+
+    return 0;
+}
+```
+
+<html>
+<br><br>
+    <p align="center">
+    <img src="https://github-profile-trophy.vercel.app/?username=ZyrxusMe&theme=onedark">
+    <br><br>
+    <img src="https://github-readme-stats.vercel.app/api?username=ZyrxusMe&theme=dark">
+</p>
+</html>
